@@ -8,7 +8,7 @@ const app = express();
 // Simple CORS middleware - more permissive approach
 app.use((req, res, next) => {
   // Allow your Vercel domains (without trailing slashes)
-  const allowedOrigin = 'https://sentiment-analyzer-bpkq.vercel.app';
+  const allowedOrigin = 'https://sentiment-analyzer-olive.vercel.app';
   
   // Set CORS headers for all responses
   res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
