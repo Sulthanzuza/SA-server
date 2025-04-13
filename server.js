@@ -8,9 +8,9 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  'https://sentiment-analyzer-bpkq.vercel.app',
-  'https://sentiment-analyzer-bpkq-sulthanshas-projects.vercel.app',
-  'https://sentiment-analyzer-bpkq-git-main-sulthanshas-projects.vercel.app'
+  'https://sentiment-analyzer-bpkq.vercel.app/',
+  'https://sentiment-analyzer-bpkq-sulthanshas-projects.vercel.app/',
+  'https://sentiment-analyzer-bpkq-git-main-sulthanshas-projects.vercel.app/'
 ];
 
 app.use(cors({
@@ -25,7 +25,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.options('*', cors());
+// app.options('*', cors());
 
 app.get('/',(req,res)=>{
   res.send("api running")
