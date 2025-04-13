@@ -13,7 +13,7 @@ const allowedOrigins = [
   'https://sentiment-analyzer-bpkq-git-main-sulthanshas-projects.vercel.app/'
 ];
 
-app.use(cors({
+const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
@@ -22,11 +22,14 @@ app.use(cors({
     }
   },
   credentials: true,
-   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS"
-}));
-app.use(express.json());
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS"  
+};
 
- app.options('*', cors());
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
+app.use(express.json());
 
 app.get('/',(req,res)=>{
   res.send("api running")
