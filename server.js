@@ -22,10 +22,11 @@ app.use(cors({
     }
   },
   credentials: true,
+   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS"
 }));
 app.use(express.json());
 
-// app.options('*', cors());
+ app.options('*', cors());
 
 app.get('/',(req,res)=>{
   res.send("api running")
